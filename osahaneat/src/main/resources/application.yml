@@ -1,0 +1,35 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3307/osahaneat
+    username: root
+    password: anhduong2002
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: none
+  servlet:
+    multipart:
+      max-file-size: 10MB # dung luong file toi da user upload
+      max-request-size: 10MB # dung luong request toi da user truyen len
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+rabbitmq:
+  queue: demorabbitmq
+  exchange: demoexchange
+  routingKey: demo_routing_key
+
+jwt :
+  privateKey : MEAVm2dQclCEliVw7GuY509QNTwQRpWZpuN6wlJGiz8=
+
+upload :
+  path : C:\Users\Admin\Pictures\AnyDesk
+
+redis :
+  host : localhost
+  port : 6380
