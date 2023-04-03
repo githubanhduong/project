@@ -1,0 +1,44 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/tags/form"  prefix="form"%>
+<%@ taglib uri="http://www.springframework.org/security/tags"  prefix="security"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<link
+	href="${pageContext.request.contextPath}/resources/css/category-side.css"
+	rel="stylesheet" type="text/css" />
+<html>
+<body>
+<div id="category-menu">
+	<div class="category">
+		<c:choose>
+			<c:when test="${customer.customerAddress eq null}">
+				<h2>카테고리</h2>
+			</c:when>
+			<c:otherwise>
+				<h2>카테고리</h2>
+				<h5>${customer.customerAddress}</h5>
+			</c:otherwise>
+		</c:choose>
+	</div>
+	
+	<ul class="category-side">
+		<c:forEach var="tempCategory" items="${category}">
+			<details>
+				<summary>
+					<h5>${tempCategory.categoryName}</h5>
+				</summary>
+				<c:forEach var="tempSubCategory" items="${subCategory}">
+					<c:if test="${tempCategory.no == tempSubCategory.categoryNo}">
+						<c:url var="categoryLink" value="category">
+							<c:param name="subCategoryNo" value="${tempSubCategory.no}" />
+						</c:url>
+						<a href="${categoryLink}">${tempSubCategory.subCategoryName}</a>
+						<br>
+					</c:if>
+				</c:forEach>
+			</details>
+		</c:forEach>
+	</ul>
+</div>
+</body>
+</html>

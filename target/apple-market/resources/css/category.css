@@ -1,0 +1,45 @@
+#category-main{
+	border: 1px solid red;
+	float:left;
+	width:60%;
+	margin:3% 20% 0 5%;
+}
+
+#category-main h2{
+	border: 1px solid red;
+	float:left;
+	width:30%;
+	margin:0 0 0 0%;
+}
+#category-main .goodsjoin{
+	border: 1px solid red;
+	float:left;
+	width:70%;
+	font-size:20pt;
+	text-align:right;
+	
+}
+.post_box{
+	border: 1px solid red;
+	height:10%;
+}
+
+.post_box .box_title{
+	width:70%;
+	border: 1px solid red;
+	text-align:right;
+	margin:0 0 0 30%;
+}
+
+.post_box img{
+	border: 1px solid red;
+	width:30%;
+	float:left;
+
+	
+}
+.post_box .box_imfo{
+	border: 1px solid red;
+	float:left;
+	width:70%;
+}

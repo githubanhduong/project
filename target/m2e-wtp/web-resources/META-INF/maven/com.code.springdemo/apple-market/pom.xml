@@ -1,0 +1,130 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion><!--project 정보-->
+	<groupId>com.code.springdemo</groupId>
+	<artifactId>apple-market</artifactId>
+	<version>1.0.0</version>
+	<packaging>war</packaging>
+
+	<properties> <!--라이브러리 버전관리(라이브러리의 버전을 따로 관리하고 싶을때 properties로 정의해 따로 관리 할 수 있다.)-->
+		<springframework.version>5.1.9.RELEASE</springframework.version> <!--라이브러리: springframework 5.1.9.RELEASE 버전-->
+		<springsecurity.version>5.0.0.RELEASE</springsecurity.version> <!--라이브러리: springsecurity 5.0.0.RELEASE 버전-->
+		<hibernate.version>5.4.4.Final</hibernate.version>  <!--라이브러리: hibernate 5.4.4.Final 버전-->
+		<mysql.connector.version>8.0.17</mysql.connector.version> <!--라이브러리: mysql 8.0.17 버전-->
+		<c3po.version>0.9.5.2</c3po.version> <!--라이브러리: c3po 0.9.5.2 버전-->
+
+		<maven.compiler.source>1.8</maven.compiler.source> <!--라이브러리: maven JDK 1.8 버전-->
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+
+	<dependencies> <!--라이브러리 셋팅 사용할 라이브러리를 정의한다.-->
+		<dependency> <!-- -Spring MVC support (spring mvc에 사용되는 라이브러리)-->
+			<groupId>org.springframework</groupId>  <!--Servlet API를 기반으로 구축된 독창적인 웹 프레임워크이며 처음부터 Spring Framework에 포함되어있다. -->
+			<artifactId>spring-webmvc</artifactId>
+			<version>${springframework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${springframework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${springframework.version}</version>
+		</dependency>
+
+		<dependency> <!--스프링 시큐리티는 사용자를 인증하고, 로그인 후 애플리케이션의 각 기능들에 대한 권한을 부여하는 기능을 구현하는데 사용되는 프레임워크로, 각 핸들러, 필터들을 거쳐 동작한다는 것이 포인트입니다. -->
+    		<groupId>org.springframework.security</groupId>
+    		<artifactId>spring-security-web</artifactId>
+    		<version>${springsecurity.version}</version>
+		</dependency>
+		
+		<dependency><!--스프링 시큐리티를 config하기 위한 라이브러리-->
+    		<groupId>org.springframework.security</groupId>
+    		<artifactId>spring-security-config</artifactId>
+    		<version>${springsecurity.version}</version>
+		</dependency>
+		
+		<dependency><!--:스프링 시큐리티를 taglibs를 사용하기 위한 라이브러리-->
+    		<groupId>org.springframework.security</groupId>
+    		<artifactId>spring-security-taglibs</artifactId>
+    		<version>${springsecurity.version}</version>
+		</dependency>
+
+		<dependency><!--하이버네이트 라이브러리-->
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+
+	
+		<dependency><!--JDBC드라이버:자바 프로그램에서 서로 다른 데이터베이스에 표준화된 방법으로 접근할 수 있는 방법을 하는 API-->
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.connector.version}</version>
+		</dependency>
+
+	
+		<dependency><!--c3p0 Connection과 StatementPool을 제공하는 라이브러리-->
+			<groupId>com.mchange</groupId>
+			<artifactId>c3p0</artifactId>
+			<version>${c3po.version}</version>
+		</dependency>
+
+	
+		<dependency><!---Servlet, JSP and JSTL support (서블릿과 jsp와 jstl에 사용되는 라이브러리) -->
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>javax.servlet.jsp-api</artifactId>
+			<version>2.3.1</version>
+		</dependency>
+
+		<dependency><!--if문, 출력문, 변수선언 등의 기능들을 JSP에서 사용할 수 있도록 표준으로 모아둔 라이브러리-->
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+
+	
+		<dependency><!--JAXB(Java Architecture for XML Binding)는 Java Object를 XML로 직렬화하고, 
+						XML을 Java Object로 역직렬화해주는 자바 API 입니다. JDK6 ~ 9 버전은 JAXB가 내장되어 있어 라이브러리를 추가 할 필요가 없습니다.-->
+		    <groupId>javax.xml.bind</groupId>
+		    <artifactId>jaxb-api</artifactId>
+		    <version>2.3.0</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>commons-fileupload</groupId>
+		    <artifactId>commons-fileupload</artifactId>
+		    <version>1.3.1</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>commons-io</groupId>
+		    <artifactId>commons-io</artifactId>
+		    <version>2.4</version>
+		</dependency>
+		
+	</dependencies>
+
+	<build><!--배포를 위한 빌드 -->
+		<finalName>apple-market</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.2.0</version>
+			</plugin>
+
+		</plugins>
+	</build>
+	<name>apple-market</name>
+</project>
+

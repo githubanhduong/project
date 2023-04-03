@@ -1,0 +1,14 @@
+#category-menu{
+	border: 1px solid red;
+	float:left;
+	width:15%;
+	height:50%;
+	margin:3% 0 0 0;
+}
+
+#category-menu .category{
+	border: 1px solid red;
+	width:95%;
+	margin:0 95% 0 5%;
+	
+}
